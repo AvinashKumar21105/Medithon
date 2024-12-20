@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booked Appointment</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+        .container {
+            width: 100%;
+            max-width: 500px; /* Reduced max-width */
+            background-color: #ffffff;
+            padding: 20px; /* Reduced padding */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            border-top: 5px solid #4CAF50; /* Green border at the top */
+            border-bottom: 5px solid #4CAF50; /* Green border at the bottom */
+        }
+        h1 {
+            color: #4CAF50;
+            font-size: 2em; /* Slightly smaller font size */
+            margin: 20px 0; /* Reduced margins */
+            text-align: center;
+        }
+        .appointment-details {
+            font-size: 1.1em;
+            margin: 10px 0;
+            color: #333;
+        }
+        .appointment-details span {
+            font-weight: bold;
+        }
+        .status {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 6px;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        .back-button {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border: 2px solid #4CAF50;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            .appointment-details {
+                font-size: 1em;
+            }
+            .back-button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6em;
+            }
+            .appointment-details {
+                font-size: 0.95em;
+            }
+            .back-button {
+                font-size: 0.95em;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Appointment Booked</h1>
+    <div class="appointment-details">
+        <p><span>Full Name:</span> John Doe</p>
+        <p><span>Date of Birth:</span> 1990-01-01</p>
+        <p><span>Patient Information:</span> Regular check-up</p>
+        <p><span>Preferred Day and Time:</span> Monday 10:00 AM</p>
+        <p><span>Doctor's Name:</span> Dr. Smith</p>
+        <p><span>Report Uploaded:</span> Yes</p>
+    </div>
+
+    <div class="status">Your appointment has been successfully booked!</div>
+
+    <button class="back-button" onclick="window.history.back()">Go Back</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; /* Change font to Arial */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            background-image: url('../static/assets/img/login_bg.jpg'); /* Replace with your image path */
+            background-size: cover; /* Cover the entire container with the image */
+            background-position: center; /* Center the image */
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.5); /* Set the background to 50% opacity */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #000; /* Changed to black */
+            font-size: 24px; /* Reduced font size */
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 15px; /* Reduced margin */
+            color: #000; /* Changed to black */
+            font-size: 14px; /* Reduced font size */
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #000; /* Changed to black */
+            font-size: 18px; /* Reduced font size */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px; /* Reduced padding */
+            margin-bottom: 15px; /* Reduced margin */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px; /* Reduced font size */
+            color: #000; /* Changed to black */
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        button {
+            background-color: #4CAF50; /* Changed to plantgreen */
+            color: #fff;
+            padding: 12px 15px; /* Reduced padding */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px; /* Reduced font size */
+            transition: background-color 0.3s ease; /* Add a smooth transition for background color */
+        }
+
+        button:hover {
+            background-color: #367c39; /* Darker plantgreen on hover */
+        }
+
+        .flash {
+            background-color: #F2DEDE;
+            padding: 10px;
+            border-radius: 5px;
+            color: #A94442;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 400px) {
+            .container {
+                width: 90%; /* Container takes 90% of the screen width */
+                float: none; /* Remove float on small screens */
+                margin: 0 auto; /* Center the container on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Medithon</h1>
+        <p>Welcome back !!!</p>
+        <h2>Log In</h2>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <p class="flash">{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form method="POST">
+            {{ form.hidden_tag() }}
+
+            <div>
+                {{ form.email.label }} {{ form.email(class_="email-input") }}
+            </div>
+            <div>
+                {{ form.password.label }} {{ form.password() }}
+            </div>
+            <div>
+                <button type="submit">Login</button>
+            </div>
+
+        </form>
+
+            <div class="signup">
+                <p>Don't have an account yet? <a href="{{ url_for('user_register') }}">Sign up for free</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+Flask==2.2.3
+Flask-SQLAlchemy==3.0.4
+Flask-Migrate==4.0.4
+Flask-Cors==3.0.10
+gunicorn==20.1.0
+# Cryptography and security
+cryptography==41.0.2
+pycryptodome==3.19.0
+eth-hash==0.5.1
+web3==6.5.0  # For blockchain integrations
+ipfshttpclient==0.8.0a2
+requests==2.31.0
+python-dotenv==1.0.0

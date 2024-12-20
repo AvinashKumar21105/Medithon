@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #4CAF50; /* Green background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure the body covers the entire viewport */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.form-container {
+  background-color: #F0FFF0; /* Light green background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  max-width: 400px; /* Adjust the width as needed */
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center; /* Center the title */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  font-weight: bold;
+  display: block; /* Make the label a block element for better spacing */
+  margin-bottom: 5px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.form-submit {
+  background-color: #4CAF50; /* Green button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a smooth transition for hover effect */
+  width: 100%; /* Make the button occupy full width */
+}
+
+.form-submit:hover {
+  background-color: #3e8e41; /* Darker green on hover */
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+}
+
+.form-item-flag {
+  margin-right: 10px;
+  width: 20px; /* Adjust the width of the flag */
+  height: 15px; /* Adjust the height of the flag */
+}
+
+.social-links {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.social-link {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: white;
+  transition: color 0.3s ease; /* Add a smooth transition for hover effect */
+}
+
+.social-link:hover {
+  color: #1976D2; /* Darker blue on hover */
+}
+
+.sidebar {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  max-width: 200px; /* Adjust the width as needed */
+  margin-right: 20px; /* Add some spacing between sidebar and form */
+}
+
+.sidebar-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-item {
+  padding: 5px 0;
+  cursor: pointer; /* Add a cursor on hover for better feedback */
+  transition: background-color 0.3s ease; /* Add a smooth transition for hover effect */
+}
+
+.sidebar-item:hover {
+  background-color: #f5f5f5;
+}
+</style>
+</head>
+<body>
+<div class="form-container">
+    <h1 class="form-title">New Customer Registration Form</h1>
+    <form method="post" action="{{url_for('user_profile_setup')}}">
+        <div class="form-group">
+            <label class="form-label" for="firstName">First Name</label>
+            <input type="text" class="form-input" id="firstName" name="firstName" />
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input type="text" class="form-input" id="email" name="email" />
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="phoneNumber">Phone Number</label>
+            <div class="form-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png" alt="India Flag" class="form-item-flag">
+                <input type="tel" class="form-input" id="phoneNumber" name="phoneNumber" value="+91">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="gender">Gender</label>
+            <select class="form-input" id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="dob">Date of Birth</label>
+            <input type="date" class="form-input" id="dob" name="dob" />
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="address">Address</label>
+            <input type="text" class="form-input" id="address" name="address" />
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="city">City</label>
+            <input type="text" class="form-input" id="city" name="city" />
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="state">State</label>
+            <input type="text" class="form-input" id="state" name="state" />
+        </div>
+        <button class="form-submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% include "header.html" %}
+
+<html lang="en">
+<div class="container my-5" style="background-image:url('../static/assets/img/Untitled-1-32.jpg'); background-size: cover; height: 100vh;">
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <svg class="bi mt-4 mb-3" style="color:black;" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
+    <h1 class="text-body-emphasis" style="color: black;">Welcome to Medithon!</h1>
+    <p class="col-lg-8 mx-auto fs-5" style="color: black;">
+      Connecting Doctors and Patients Made Easy.<br>
+      Schedule Video Consultations, Offline Appointments, or Get Expert Suggestions.<br>
+      Take Control of Your Health Journey Today!
+    </p>
+    <div class="d-inline-flex gap-2 mb-5">
+      <a href="{{ url_for('doctor_register') }}">
+        <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+          Doctor
+        </button>
+      </a>
+      <a href="{{ url_for('user_register') }}">
+        <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+          Patient
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+{% include "footer.html" %}
